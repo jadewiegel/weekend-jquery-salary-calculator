@@ -36,4 +36,15 @@ function emplmoyeeInfo(){
     empInfo.push(empObject);
     
     console.log(empInfo);
+
+    displayEmp();
+}
+
+function displayEmp(){
+    $('#addToTable').empty();
+
+    for (let i=0; i<empInfo.length; i++);{
+        console.log('inside loop for addToTable');
+    }
+
 }
