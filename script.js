@@ -81,7 +81,6 @@ function calcMonthlyCosts(){
     }
 }
 
-function removeEmp(employee){
-    console.log('inside removeEmp');
-    $("tr").remove();
+function removeEmp(){
+    (this).remove();
 }
