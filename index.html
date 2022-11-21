@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h2>Add Employee</h2>
-    <div id="inputEmployee">
+    <div class="inputEmployee">
         <input type="text" placeholder="Employee First Name:" id="first-name">
         <input type="text" placeholder="Employee Last Name:" id="last-name">
         <input type="number" placeholder="Employee ID Number:" id="idNum">
@@ -21,7 +22,7 @@
         <button id="submitEmployee">Submit</button>
     </div>
     <h2>Employee Salaries</h2>
-    
+    <div class="table"><span>
         <table>
             <thead>
                 <tr>
@@ -38,8 +39,10 @@
             <tfoot>
 
             </tfoot>
-        </table>
-
-    <h2 id="monthTotal"></h2>
+        </span></table>
+    </div>
+    <div class="totals">
+        <h2 id="monthTotal"></h2>
+    </div>
 </body>
 </html>

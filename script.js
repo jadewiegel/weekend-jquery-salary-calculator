@@ -49,15 +49,16 @@ function displayEmp(){
         // console.log('inside loop for addToTable');
         $('#addToTable').append(`
         <tr>
-        <td>${empInfo[i].FirstName}</td>
-        <td>${empInfo[i].LastName}</td>
-        <td>${empInfo[i].IDNumber}</td>
-        <td>${empInfo[i].JobTitle}</td>
-        <td>${empInfo[i].AnnualSalary}</td>
+            <td>${empInfo[i].FirstName}</td>
+            <td>${empInfo[i].LastName}</td>
+            <td>${empInfo[i].IDNumber}</td>
+            <td>${empInfo[i].JobTitle}</td>
+            <td>${empInfo[i].AnnualSalary}</td>
+            <td><button class="removeEmpBtn">Remove</button>
         </tr>
-        
         `);
         
+        $('.removeEmpBtn').on('click', removeEmp);
     }
     
     calcMonthlyCosts();
@@ -75,4 +76,12 @@ function calcMonthlyCosts(){
         Total Monthly Costs: ${monthTotalCosts}
     `);
     // console.log(monthTotalCosts);
+    if (monthTotalCosts > 20000){
+        $('#monthTotal').css("background-color", "red");
+    }
+}
+
+function removeEmp(employee){
+    console.log('inside removeEmp');
+    $("tr").remove();
 }
