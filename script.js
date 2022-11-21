@@ -43,8 +43,18 @@ function emplmoyeeInfo(){
 function displayEmp(){
     $('#addToTable').empty();
 
-    for (let i=0; i<empInfo.length; i++);{
-        console.log('inside loop for addToTable');
+    for (let i=0; i<empInfo.length; i++){
+        // console.log('inside loop for addToTable');
+        $('#addToTable').append(`
+            <tr>
+                <td>${empInfo[i].FirstName}</td>
+                <td>${empInfo[i].LastName}</td>
+                <td>${empInfo[i].IDNumber}</td>
+                <td>${empInfo[i].JobTitle}</td>
+                <td>${empInfo[i].AnnualSalary}</td>
+            </tr>
+        
+        `);
     }
 
 }
