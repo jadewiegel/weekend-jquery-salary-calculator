@@ -5,6 +5,7 @@ $(document).ready(onReady);
 function onReady(){
     console.log('inside onReady');
     $('#submitEmployee').on('click', emplmoyeeInfo);
+    calcMonthlyCosts();
 }
 
 let empInfo = [];
@@ -41,20 +42,37 @@ function emplmoyeeInfo(){
 }
 
 function displayEmp(){
+    // let salaryTot = 0;
     $('#addToTable').empty();
-
+    
     for (let i=0; i<empInfo.length; i++){
         // console.log('inside loop for addToTable');
         $('#addToTable').append(`
-            <tr>
-                <td>${empInfo[i].FirstName}</td>
-                <td>${empInfo[i].LastName}</td>
-                <td>${empInfo[i].IDNumber}</td>
-                <td>${empInfo[i].JobTitle}</td>
-                <td>${empInfo[i].AnnualSalary}</td>
-            </tr>
+        <tr>
+        <td>${empInfo[i].FirstName}</td>
+        <td>${empInfo[i].LastName}</td>
+        <td>${empInfo[i].IDNumber}</td>
+        <td>${empInfo[i].JobTitle}</td>
+        <td>${empInfo[i].AnnualSalary}</td>
+        </tr>
         
         `);
+        
     }
+    
+    calcMonthlyCosts();
+}
 
+function calcMonthlyCosts(){
+    console.log('inside calcMonthlyCosts');
+    let monthTotalCosts = 0;
+    $('#monthTotal').empty();
+
+    for (let i=0; i<empInfo.length; i++){
+        monthTotalCosts += Number(empInfo[i].AnnualSalary);
+    }
+    $('#monthTotal').append(`
+        Total Monthly Costs: ${monthTotalCosts}
+    `);
+    // console.log(monthTotalCosts);
 }

@@ -9,12 +9,15 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Add Employee</h2>
     <div id="inputEmployee">
         <input type="text" placeholder="Employee First Name:" id="first-name">
         <input type="text" placeholder="Employee Last Name:" id="last-name">
-        <input type="text" placeholder="Employee ID Number:" id="idNum">
+        <input type="number" placeholder="Employee ID Number:" id="idNum">
         <input type="text" placeholder="Employee Job Title:" id="jobTitle">
-        <input type="text" placeholder="Employee Annual Salary:" id="annualSalary">
+        <input type="number" placeholder="Employee Annual Salary:" id="annualSalary">
+        <br>
+        <br>
         <button id="submitEmployee">Submit</button>
     </div>
     <h2>Employee Salaries</h2>
@@ -32,7 +35,11 @@
             <tbody id="addToTable">
                 
             </tbody>
+            <tfoot>
+
+            </tfoot>
         </table>
-    
+
+    <h2 id="monthTotal"></h2>
 </body>
 </html>
