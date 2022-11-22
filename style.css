@@ -1,12 +1,21 @@
 .totals {
     text-align: right;
 }
+
 .table {
     border-style: solid;
+    text-align: center;
 }
+
 th {
-    border-style: solid; 
+    border-style: solid;
+    padding-right: 50px; 
 }
+
 td {
     border-style: solid;
+}
+
+tr:nth-child(even) {
+    background-color: grey;
 }

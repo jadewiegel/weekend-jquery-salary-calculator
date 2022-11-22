@@ -6,6 +6,8 @@ function onReady(){
     console.log('inside onReady');
     $('#submitEmployee').on('click', emplmoyeeInfo);
     calcMonthlyCosts();
+    
+
 }
 
 let empInfo = [];
@@ -48,7 +50,7 @@ function displayEmp(){
     for (let i=0; i<empInfo.length; i++){
         // console.log('inside loop for addToTable');
         $('#addToTable').append(`
-        <tr>
+        <tr id="${i}">
             <td>${empInfo[i].FirstName}</td>
             <td>${empInfo[i].LastName}</td>
             <td>${empInfo[i].IDNumber}</td>
@@ -57,9 +59,8 @@ function displayEmp(){
             <td><button class="removeEmpBtn">Remove</button>
         </tr>
         `);
-        
-        $('.removeEmpBtn').on('click', removeEmp);
     }
+    $('.removeEmpBtn').on('click', removeEmp);
     
     calcMonthlyCosts();
 }
@@ -82,5 +83,9 @@ function calcMonthlyCosts(){
 }
 
 function removeEmp(){
-    (this).remove();
+    let idInfo = $(this).closest('tr').attr('id');
+    $(this).closest('tr').attr('id');
+    $(this).closest('tr').remove();
+    empInfo.splice(idInfo, 1);
+    console.log(idInfo);
 }
